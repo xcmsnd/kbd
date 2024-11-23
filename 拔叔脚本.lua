@@ -72,6 +72,22 @@ about:Label("你的注入器:"..identifyexecutor())
 about:Label("你的用户名:"..game.Players.LocalPlayer.Character.Name)
 about:Label("服务器名称:"..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
 
+local UITab3 = win:Tab("好用的脚本",'16060333448')
+
+local about = UITab3:section("好用的脚本",true)
+
+about:Button("靓坤黑洞中心(要白名单否则会被踢)",function()
+loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\120\99\109\115\110\100\47\120\99\109\115\110\100\47\114\101\102\115\47\104\101\97\100\115\47\109\97\105\110\47\54\46\108\117\97\34\41\41\40\41")()
+end)
+
+about:Button("超好用的ESP",function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md'),true))() 
+end)
+
+about:Button("小凌最新版",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E6%96%B0%E5%86%AC%E5%87%8C.Lua"))()
+end)
+
 local UITab3 = win:Tab("精通",'16060333448')
 
 local about = UITab3:section("精通",true)
