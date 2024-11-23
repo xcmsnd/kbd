@@ -385,8 +385,7 @@ for i, v in next, lp.Backpack:GetDescendants() do
 end
 end)
 
---[[
-Tab27:Button(
+about:Button(
     "无限弹药和空载",
     function()
 ReplicatedStorage.BulletFireSystem.GunReload:destroy();
@@ -399,9 +398,7 @@ ReplicatedStorage.BulletFireSystem.GunReload:destroy();
                 if(v.ClassName == "Tool") then v.ACS_Modulo.Variaveis.Ammo.Value = 9999; end;
             end;
         end;
-    end
-)
-]]
+    end)
 about:Button(
     "防暴盾牌",
     function()
@@ -1320,7 +1317,7 @@ local UITab3 = win:Tab("蜂群模拟器",'16060333448')
 
 local about = UITab3:section("蜂群模拟器",true)
 
-about:Button("蜂群模拟器1",function()
+about:Button("蜂群模拟器",function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/max0mind/lua/main/loader.lua'))()
 end)
 
