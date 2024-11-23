@@ -283,34 +283,6 @@ about:Toggle("传奇健身房跑步机3000", "CQPPJ3000", false, function(CQPPJ3
     if game.Players.LocalPlayer.Agility.Value >= 3000 then getgenv().CQPPJ3000 = CQPPJ3000 while getgenv().CQPPJ3000 do wait() game.Players.LocalPlayer.Character:WaitForChild("Humanoid").WalkSpeed = 10 game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(4370.82812, 999.358704, -3621.42773, -0.960604727, -8.41949266e-09, -0.27791819, -6.12478646e-09, 1, -9.12496567e-09, 0.27791819, -7.06329528e-09, -0.960604727) local oldpos = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame local RunService = game:GetService("RunService") local Players = game:GetService("Players") local localPlayer = Players.LocalPlayer RunService:BindToRenderStep("move", Enum.RenderPriority.Character.Value + 1, function() if localPlayer.Character then local humanoid = localPlayer.Character:WaitForChild("Humanoid") if humanoid then humanoid:Move(Vector3.new(10000, 0, -1), true) end end end) end end if not getgenv().CQPPJ3000 then local RunService = game:GetService("RunService") local Players = game:GetService("Players") local localPlayer = Players.LocalPlayer RunService:UnbindFromRenderStep("move", Enum.RenderPriority.Character.Value + 1, function() if localPlayer.Character then local humanoid = localPlayer.Character:FindFirstChild("Humanoid") if humanoid then humanoid:Move(Vector3.new(10000, 0, -1), true) end end end) end
 end)
 
-about:Toggle("石头", "RK0", false, function(RK0)
-    getgenv().RK0 = RK0 while getgenv().RK0 do wait() for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do if v:IsA("Tool") and v.Name == "Punch" then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):EquipTool(v) end end for i,h in pairs(game.Players.LocalPlayer.Character:GetChildren()) do if h:IsA("Tool") and h.Name == "Punch" then h:Activate() end end game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(7.60643005, 4.02632904, 2104.54004, -0.23040159, -8.53662385e-08, -0.973095655, -4.68743764e-08, 1, -7.66279342e-08, 0.973095655, 2.79580536e-08, -0.23040159) end if not getgenv().RK0 then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):UnequipTools() end
-end)
-about:Toggle("石头10", "RK10", false, function(RK10)
-    if game.Players.LocalPlayer.Durability.Value >= 10 then getgenv().RK10 = RK10 while getgenv().RK10 do wait() for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do if v:IsA("Tool") and v.Name == "Punch" then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):EquipTool(v) end end for i,h in pairs(game.Players.LocalPlayer.Character:GetChildren()) do if h:IsA("Tool") and h.Name == "Punch" then h:Activate() end end game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(-157.680908, 3.72453046, 434.871185, 0.923298299, -1.81774684e-09, -0.384083599, 3.45247031e-09, 1, 3.56670582e-09, 0.384083599, -4.61917082e-09, 0.923298299) end if not getgenv().RK10 then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):UnequipTools() end end
-end)
-about:Toggle("石头100", "RK100", false, function(RK100)
-    if game.Players.LocalPlayer.Durability.Value >= 100 then getgenv().RK100 = RK100 while getgenv().RK100 do wait() for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do if v:IsA("Tool") and v.Name == "Punch" then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):EquipTool(v) end end for i,h in pairs(game.Players.LocalPlayer.Character:GetChildren()) do if h:IsA("Tool") and h.Name == "Punch" then h:Activate() end end game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(162.233673, 3.66615629, -164.686783, -0.921312928, -1.80826774e-07, -0.38882193, -9.13036544e-08, 1, -2.48719346e-07, 0.38882193, -1.93647494e-07, -0.921312928) end if not getgenv().RK100 then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):UnequipTools() end end
-end)
-about:Toggle("石头5000", "RK5000", false, function(RK5000)
-    if game.Players.LocalPlayer.Durability.Value >= 5000 then getgenv().RK5000 = RK5000 while getgenv().RK5000 do wait() for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do if v:IsA("Tool") and v.Name == "Punch" then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):EquipTool(v) end end for i,h in pairs(game.Players.LocalPlayer.Character:GetChildren()) do if h:IsA("Tool") and h.Name == "Punch" then h:Activate() end end game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(329.831482, 3.66450214, -618.48407, -0.806075394, -8.67358096e-08, 0.591812849, -1.05715522e-07, 1, 2.57029176e-09, -0.591812849, -6.04919563e-08, -0.806075394) end if not getgenv().RK5000 then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):UnequipTools() end end
-end)
-about:Toggle("石头150000", "RK150000", false, function(RK150000)
-    if game.Players.LocalPlayer.Durability.Value >= 150000 then getgenv().RK150000 = RK150000 while getgenv().RK150000 do wait() for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do if v:IsA("Tool") and v.Name == "Punch" then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):EquipTool(v) end end for i,h in pairs(game.Players.LocalPlayer.Character:GetChildren()) do if h:IsA("Tool") and h.Name == "Punch" then h:Activate() end end game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(-2566.78076, 3.97019577, -277.503235, -0.923934579, -4.11600105e-08, -0.382550538, -3.38838042e-08, 1, -2.57576183e-08, 0.382550538, -1.08360858e-08, -0.923934579) end if not getgenv().RK150000 then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):UnequipTools() end end
-end)
-about:Toggle("石头400000", "RK400000", false, function(RK400000)
-    if game.Players.LocalPlayer.Durability.Value >= 400000 then getgenv().RK400000 = RK400000 while getgenv().RK400000 do wait() for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do if v:IsA("Tool") and v.Name == "Punch" then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):EquipTool(v) end end for i,h in pairs(game.Players.LocalPlayer.Character:GetChildren()) do if h:IsA("Tool") and h.Name == "Punch" then h:Activate() end end game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(2155.61743, 3.79830337, 1227.06482, -0.551303148, -9.16796949e-09, -0.834304988, -5.61318245e-08, 1, 2.61027839e-08, 0.834304988, 6.12216127e-08, -0.551303148) end if not getgenv().RK400000 then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):UnequipTools() end end
-end)
-about:Toggle("石头750000", "RK750000", false, function(RK750000)
-    if game.Players.LocalPlayer.Durability.Value >= 750000 then getgenv().RK750000 = RK750000 while getgenv().RK750000 do wait() for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do if v:IsA("Tool") and v.Name == "Punch" then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):EquipTool(v) end end for i,h in pairs(game.Players.LocalPlayer.Character:GetChildren()) do if h:IsA("Tool") and h.Name == "Punch" then h:Activate() end end game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(-7285.6499, 3.66624784, -1228.27417, 0.857643783, -1.58175091e-08, -0.514244199, -1.22581563e-08, 1, -5.12025977e-08, 0.514244199, 5.02172774e-08, 0.857643783) end if not getgenv().RK750000 then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):UnequipTools() end end
-end)
-about:Toggle("石头100万", "RK1M", false, function(RK1M)
-    if game.Players.LocalPlayer.Durability.Value >= 1000000 then getgenv().RK1M = RK1M while getgenv().RK1M do wait() for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do if v:IsA("Tool") and v.Name == "Punch" then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):EquipTool(v) end end for i,h in pairs(game.Players.LocalPlayer.Character:GetChildren()) do if h:IsA("Tool") and h.Name == "Punch" then h:Activate() end end game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(4160.87109, 987.829102, -4136.64502, -0.893115997, 1.25481356e-05, 0.44982639, 5.02490684e-06, 1, -1.79187136e-05, -0.44982639, -1.37431543e-05, -0.893115997) end if not getgenv().RK1M then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):UnequipTools() end end
-end)
-about:Toggle("石头500万", "RK5M", false, function(RK5M)
-    if game.Players.LocalPlayer.Durability.Value >= 5000000 then getgenv().RK5M = RK5M while getgenv().RK5M do wait() for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do if v:IsA("Tool") and v.Name == "Punch" then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):EquipTool(v) end end for i,h in pairs(game.Players.LocalPlayer.Character:GetChildren()) do if h:IsA("Tool") and h.Name == "Punch" then h:Activate() end end game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(-8957.54395, 5.53625107, -6126.90186, -0.803919137, 6.6065212e-08, 0.594738603, -8.93136143e-09, 1, -1.23155459e-07, -0.594738603, -1.04318865e-07, -0.803919137) end if not getgenv().RK5M then game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):UnequipTools() end end
-end)
-
 about:Button("出生点",function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7, 3, 108)
 end)
@@ -375,6 +347,193 @@ local UITab5 = win:Tab("战争大亨",'16060333448')
 
 local about = UITab5:section("战争大亨",true)
 
+about:Button(
+    "删除所有门",
+    function()
+        for k,v in pairs(Workspace.Tycoon.Tycoons:GetChildren()) do
+            for x,y in pairs(v.PurchasedObjects:GetChildren()) do
+                if(y.Name:find("Door") or y.Name:find("Gate")) then y:destroy(); end;
+            end;
+        end;
+    end)
+
+about:Button(
+    "删除你的视觉盔甲和头盔",
+    function()
+        for k,v in pairs(Player.Character:GetChildren()) do
+            if(v.ClassName == "Accessory") then v:destroy() end;
+            if(v.Name:find("Armor")) then v.Mesh:destroy() end;
+            if(v.Name:find("Helmet")) then v:destroy() end;
+        end;
+    end)
+
+
+about:Button(
+    "无限子弹",
+    function()
+local lp = game.Players.LocalPlayer
+
+for i, v in next, lp.Backpack:GetDescendants() do
+    if v.Name == 'Settings' then
+        local success, settingsModule = pcall(require, v)
+        if success then
+            settingsModule.Ammo = math.huge
+        else
+            warn("无法要求设置: " .. tostring(settingsModule))
+        end
+    end
+end
+end)
+
+--[[
+Tab27:Button(
+    "无限弹药和空载",
+    function()
+ReplicatedStorage.BulletFireSystem.GunReload:destroy();
+        local gunReload = Instance.new("Part");
+        gunReload.Name = "GunReload";
+        gunReload.Parent = ReplicatedStorage.BulletFireSystem;
+        while true do
+            wait(0);
+            for _,v in pairs(Player.Character:GetChildren()) do
+                if(v.ClassName == "Tool") then v.ACS_Modulo.Variaveis.Ammo.Value = 9999; end;
+            end;
+        end;
+    end
+)
+]]
+about:Button(
+    "防暴盾牌",
+    function()
+ReplicatedStorage.BulletFireSystem.GunReload:destroy();
+        local gunReload = Instance.new("Part");
+        gunReload.Name = "GunReload";
+        gunReload.Parent = ReplicatedStorage.BulletFireSystem;
+        while true do
+            wait(0);
+            for _,v in pairs(Player.Character:GetChildren()) do
+                if(v.ClassName == "Tool") then v.ACS_Modulo.Variaveis.Ammo.Value = 9999; end;
+            end;
+        end;
+    end)
+
+about:Button(
+    "基地",
+    function()
+for _, v in pairs({"Alpha","Bravo","Charlie","Delta","Echo","Foxtrot","Kilo","Lima","Omega","Tango","Victor","Zulu"}) do
+    if(v ~= Player.leaderstats.Team.Value) then
+        TycoonsSection:AddButton({
+            Name = v,
+            Callback = function ()
+                Player.Character.HumanoidRootPart.CFrame = Workspace.Tycoon.Tycoons[v].Essentials.Spawn.CFrame;
+            end 
+        });
+    end;
+end;
+    end);
+wait(1)
+about:Button(
+    "捕获点",
+    function()
+Player.Character.HumanoidRootPart.CFrame = Workspace.Beams.CapturePoint1.CFrame;
+    end)
+about:Button(
+    "查看游戏中的所有玩家（包括血量条）",
+    function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/G2zb992X'),true))()
+    end)
+about:Button(
+    "油桶",
+    function()
+for _, v in pairs(Workspace.Beams:GetChildren()) do
+            if(v.Name:find("Warehouse")) then
+                Player.Character.HumanoidRootPart.CFrame = Workspace.Beams[v.Name].CFrame;
+                break
+            end;
+        end;
+    end)
+
+about:Button(
+    "车辆货箱",
+    function()
+for _,v in pairs(Workspace.Beams:GetChildren()) do
+            if(v.Name:find("Airdrop_")) then Player.Character.HumanoidRootPart.CFrame = v.CFrame; end;
+        end;
+    end)
+
+about:Button(
+    "隔空投送",
+    function()
+for _, v in pairs(Workspace.Beams:GetChildren()) do
+            if(v.Name:find("Warehouse")) then
+                Player.Character.HumanoidRootPart.CFrame = Workspace.Beams[v.Name].CFrame;
+                break
+            end;
+        end;
+    end)
+
+
+local about = Wartycoon:section("传送", true)
+about:Button(
+    "传送到空投",
+    function()
+local Folder = workspace["Game Systems"]
+local player = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+
+for _, Child in ipairs(Folder:GetDescendants()) do
+	if Child.Name:match("Airdrop_") then 
+		player.CFrame = Child.MainPart.CFrame
+end
+end
+    end)
+
+about:Button(
+    "传送你的基地",
+    function()
+function getTycoon()
+    game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Tycoon.Tycoons[game:GetService("Players").LocalPlayer.leaderstats.Team.Value].Essentials.Spawn.Position)
+end
+    end)
+about:Button(
+    "酒店基地",
+    function()
+local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+local location = CFrame.new(2853, 48, -1282)
+local Humanoid = game.Players.LocalPlayer.Character.Humanoid
+Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+wait(0.2)
+pl.CFrame = location
+    end)
+about:Button(
+    "传送旗帜",
+    function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(73.22032928466797, 47.9999885559082, 191.06993103027344)
+    end)
+
+about:Button(
+    "传送油桶",
+    function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9.748652458190918, 48.662540435791016, 700.2245483398438)
+    end)
+
+about:Button(
+    "传送油桶",
+    function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(76.48243713378906, 105.25657653808594, -2062.3896484375)
+    end)
+
+about:Button(
+    "传送油桶",
+    function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-28.840208053588867, 49.34040069580078, -416.9921569824219)
+    end)
+
+about:Button(
+    "传送油桶",
+    function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(69.48390197753906, 105.25657653808594, 3434.9033203125)
+    end)
 
 local UITab6 = win:Tab("bf",'16060333448')
 
