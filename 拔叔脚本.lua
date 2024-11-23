@@ -190,14 +190,6 @@ about:Toggle(" 显示玩家名字v2", "ESP", false, function(state)
         end
     end)
 
-about:Button("透视1",function()
-loadstring(game:HttpGet('https://pastebin.com/raw/MA8jhPWT'))()
-end)
-
-about:Button("隐身",function()
-loadstring(game:HttpGet('https://pastebin.com/raw/nwGEvkez'))()
-end)
-
 about:Button("电脑键盘",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
 end)
@@ -220,22 +212,6 @@ end)
 
 about:Button("自杀",function()
 game.Players.LocalPlayer.Character.Humanoid.Health=0
-end)
-
-about:Button("夜视仪",function()
-    _G.OnShop = trueloadstring(game:HttpGet('https://raw.githubusercontent.com/DeividComSono/Scripts/main/Scanner.lua'))()
-end)
-
-about:Button("正常范围",function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/jiNwDbCN"))()
-end)
-
-about:Button("中等范围",function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/x13bwrFb"))()
-end)
-
-about:Button("高级范围",function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/KKY9EpZU"))()
 end)
 
 about:Button("反挂机",function()
@@ -418,6 +394,26 @@ end)
 local UITab7 = win:Tab("DOORS",'16060333448')
 
 local about = UITab7:section("DOORS",true)  
+
+about:Button("夜视仪",function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/DeividComSono/Scripts/main/Scanner.lua'))()
+end)
+
+about:Button("DOORS低回拉穿墙",function()
+loadstring(game:HttpGet("https://github.com/DXuwu/OK/raw/main/clip"))()
+end)
+
+about:Button("极端模式",function()
+loadstring(game:HttpGet("https://pastebin.com/raw/gNybFb2Z"))()
+end)
+
+about:Button("微山",function()
+loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\117\72\72\112\56\102\122\83"))()
+end)
+
+about:Button("DOORS多脚本",function()
+loadstring(game:HttpGet("https://pastebin.com/raw/07P53fFE"))()
+end)
 
 about:Button("doors脚本1",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Darkrai-X/main/Games/Doors"))()
@@ -1148,3 +1144,34 @@ about:Button("鲨口求生刷船",function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/ghostapustaja/legionhub/main/sharkbite2'),true))()
 end)
 
+local UITab3 = win:Tab("火箭发射",'16060333448')
+
+local about = UITab3:section("火箭发射",true)
+
+about:Button("火箭发射1",function()
+loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/9245/%E7%8C%AB%E9%80%9A%E7%94%A8.txt?sign=hrWROZdVfK2mtJcIFa3Tvbl-TojP1C86_Zd3q03qttc%3D%3A0"))()
+end)
+
+about:Button("火箭发射2",function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/dizyhvh/rbx_scripts/main/321_blast_off_simulator')))()
+end)
+
+local UITab3 = win:Tab("蜂群模拟器",'16060333448')
+
+local about = UITab3:section("蜂群模拟器",true)
+
+about:Button("蜂群模拟器",function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/max0mind/lua/main/loader.lua'))()
+end)
+
+local UITab3 = win:Tab("监狱人生",'16060333448')
+
+local about = UITab3:section("监狱人生",true)
+
+about:Button("监狱人生1",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SpecialXyt/Prison-Life-/main/OrekiHub"))()
+end)
+
+about:Button("监狱人生2",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Denverrz/scripts/master/PRISONWARE_v1.3.txt"))()
+end)
