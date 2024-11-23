@@ -55,11 +55,12 @@ local win = ui:new("拔叔脚本")
 --
 local UITab1 = win:Tab("信息",'16060333448')
 
-local about = UITab1:section("作者信息",false)
+local about = UITab1:section("信息",false)
 
-about:Label("LK脚本")
-about:Label("作者：LK")
-about:Label("作者QQ群：856201787")
+about:Label("作者：靓坤")
+about:Label("部分是禁漫中心的")
+about:Label("脚本持续更新中")
+about:Label("脚本疯狂优化中")
 about:Button("公益版",function()
 loadstring(game:HttpGet("https://pastebin.com/raw/3rrU4cnx"))()
 end)
@@ -143,8 +144,8 @@ about:Button("铁拳",function()
   loadstring(game:HttpGet('https://raw.githubusercontent.com/0Ben1/fe/main/obf_rf6iQURzu1fqrytcnLBAvW34C9N55kS9g9G3CKz086rC47M6632sEd4ZZYB0AYgV.lua.txt'))()
 end)
 
-about:Toggle("ESP 显示名字", "AMG", ENABLED, function(enabled)
-    if enabled then ENABLED = true for _, player in ipairs(Players:GetPlayers()) do onPlayerAdded(player) end Players.PlayerAdded:Connect(onPlayerAdded) Players.PlayerRemoving:Connect(onPlayerRemoving) local localPlayer = Players.LocalPlayer if localPlayer and localPlayer.Character then for _, player in ipairs(Players:GetPlayers()) do if player.Character then createNameLabel(player) end end end RunService.Heartbeat:Connect(function() if ENABLED then for _, player in ipairs(Players:GetPlayers()) do if player.Character then createNameLabel(player) end end end end) else ENABLED = false for _, player in ipairs(Players:GetPlayers()) do onPlayerRemoving(player) end RunService:UnbindFromRenderStep("move") end
+about:Button("通用ESP",function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/main/UESP'))()
 end)
 
 about:Toggle(" 显示玩家名字v2", "ESP", false, function(state)
@@ -1175,3 +1176,33 @@ end)
 about:Button("监狱人生2",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Denverrz/scripts/master/PRISONWARE_v1.3.txt"))()
 end)
+
+local UITab3 = win:Tab("幸运方块",'16060333448')
+
+local about = UITab3:section("幸运方块",true)
+
+about:Button("1",function()
+loadstring(game:HttpGet("https://github.com/bruhhwtf/LUCKY-BLOCKS-Battlegrounds-GUI/raw/main/Main"))()
+end)
+
+local UITab3 = win:Tab("国王遗产",'16060333448')
+
+local about = UITab3:section("国王遗产",true)
+
+about:Button("1",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Strikehubv2z/StormSKz/main/All_in_one"))()
+end)
+
+about:Button("2",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hajibeza/RIPPER-HUB/main/King%20Leagacy"))()
+end)
+
+about:Button("3",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/master/legacy"))()
+end)
+
+about:Button("4",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/sannin9000/scripts/main/kinglegacy.lua"))()
+end)
+
+
