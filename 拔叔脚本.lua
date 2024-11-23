@@ -1172,4 +1172,172 @@ about:Button("4",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/sannin9000/scripts/main/kinglegacy.lua"))()
 end)
 
+local UITab5 = win:Tab("战争大亨",'16060333448')
+
+local about = UITab5:section("战争大亨",true)
+
+about:Button(
+    "删除所有门",
+    function()
+        for k,v in pairs(Workspace.Tycoon.Tycoons:GetChildren()) do
+            for x,y in pairs(v.PurchasedObjects:GetChildren()) do
+                if(y.Name:find("Door") or y.Name:find("Gate")) then y:destroy(); end;
+            end;
+        end;
+    end)
+
+about:Button(
+    "删除你的视觉盔甲和头盔",
+    function()
+        for k,v in pairs(Player.Character:GetChildren()) do
+            if(v.ClassName == "Accessory") then v:destroy() end;
+            if(v.Name:find("Armor")) then v.Mesh:destroy() end;
+            if(v.Name:find("Helmet")) then v:destroy() end;
+        end;
+    end)
+
+
+about:Button(
+    "无限子弹",
+    function()
+local lp = game.Players.LocalPlayer
+
+for i, v in next, lp.Backpack:GetDescendants() do
+    if v.Name == 'Settings' then
+        local success, settingsModule = pcall(require, v)
+        if success then
+            settingsModule.Ammo = math.huge
+        else
+            warn("无法要求设置: " .. tostring(settingsModule))
+        end
+    end
+end
+end)
+
+about:Button(
+    "无限弹药和空载",
+    function()
+ReplicatedStorage.BulletFireSystem.GunReload:destroy();
+        local gunReload = Instance.new("Part");
+        gunReload.Name = "GunReload";
+        gunReload.Parent = ReplicatedStorage.BulletFireSystem;
+        while true do
+            wait(0);            for _,v in pairs(Player.Character:GetChildren()) do
+                if(v.ClassName == "Tool") then v.ACS_Modulo.Variaveis.Ammo.Value = 9999; end;
+            end;
+        end;
+    end)
+about:Button(
+    "防暴盾牌",
+    function()
+ReplicatedStorage.BulletFireSystem.GunReload:destroy();
+        local gunReload = Instance.new("Part");
+        gunReload.Name = "GunReload";
+        gunReload.Parent = ReplicatedStorage.BulletFireSystem;
+        while true do
+            wait(0);
+            for _,v in pairs(Player.Character:GetChildren()) do
+                if(v.ClassName == "Tool") then v.ACS_Modulo.Variaveis.Ammo.Value = 9999; end;
+            end;
+        end;
+    end)
+
+about:Button(
+    "基地",
+    function()
+for _, v in pairs({"Alpha","Bravo","Charlie","Delta","Echo","Foxtrot","Kilo","Lima","Omega","Tango","Victor","Zulu"}) do
+    if(v ~= Player.leaderstats.Team.Value) then
+        TycoonsSection:AddButton({
+            Name = v,
+            Callback = function ()
+                Player.Character.HumanoidRootPart.CFrame = Workspace.Tycoon.Tycoons[v].Essentials.Spawn.CFrame;
+            end 
+        });
+    end;
+end;
+    end);
+wait(1)
+about:Button(
+    "捕获点",
+    function()
+Player.Character.HumanoidRootPart.CFrame = Workspace.Beams.CapturePoint1.CFrame;
+    end)
+about:Button(
+    "查看游戏中的所有玩家（包括血量条）",
+    function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/G2zb992X'),true))()
+    end)
+about:Button(    "油桶",
+    function()
+for _, v in pairs(Workspace.Beams:GetChildren()) do
+            if(v.Name:find("Warehouse")) then
+                Player.Character.HumanoidRootPart.CFrame = Workspace.Beams[v.Name].CFrame;
+                break
+            end;
+        end;
+    end)
+
+about:Button(
+    "车辆货箱",
+    function()
+for _,v in pairs(Workspace.Beams:GetChildren()) do
+            if(v.Name:find("Airdrop_")) then Player.Character.HumanoidRootPart.CFrame = v.CFrame; end;
+        end;
+    end)
+
+about:Button(
+    "隔空投送",
+    function()
+for _, v in pairs(Workspace.Beams:GetChildren()) do
+            if(v.Name:find("Warehouse")) then
+                Player.Character.HumanoidRootPart.CFrame = Workspace.Beams[v.Name].CFrame;
+                break
+            end;
+        end;
+    end)
+
+
+local about = Wartycoon:section("传送", true)
+about:Button(
+    "传送到空投",
+    function()
+local Folder = workspace["Game Systems"]
+local player = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+
+for _, Child in ipairs(Folder:GetDescendants()) do
+	if Child.Name:match("Airdrop_") then 
+		player.CFrame = Child.MainPart.CFrame
+end
+end
+    end)
+
+about:Button(
+    "传送你的基地",
+    function()
+function getTycoon()
+    game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Tycoon.Tycoons[game:GetService("Players").LocalPlayer.leaderstats.Team.Value].Essentials.Spawn.Position)
+end
+    end)
+about:Button(
+    "酒店基地",
+    function()
+local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+local location = CFrame.new(2853, 48, -1282)
+local Humanoid = game.Players.LocalPlayer.Character.Humanoid
+Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+wait(0.2)
+pl.CFrame = location
+    end)
+about:Button(
+    "传送旗帜",
+    function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(73.22032928466797, 47.9999885559082, 191.06993103027344)
+    end)
+
+about:Button(
+    "传送油桶",
+    function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9.748652458190918, 48.662540435791016, 700.2245483398438)
+    end)
 
