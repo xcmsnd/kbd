@@ -45,7 +45,7 @@ local function HeartbeatUpdate()
 	FrameUpdateTable[1] = LastIteration
 	local CurrentFPS = (tick() - Start >= 1 and #FrameUpdateTable) or (#FrameUpdateTable / (tick() - Start))
 	CurrentFPS = CurrentFPS - CurrentFPS % 1
-	FpsLabel.Text = ("现在时间:"..os.date("%H").."时"..os.date("%M").."分"..os.date("%S"))
+	FpsLabel.Text = ("现在时间是:"..os.date("%H").."时"..os.date("%M").."分"..os.date("%S"))
 end
 Start = tick()
 Heartbeat:Connect(HeartbeatUpdate)
@@ -58,7 +58,7 @@ local UITab1 = win:Tab("信息",'16060333448')
 local about = UITab1:section("信息",false)
 
 about:Label("作者：靓坤")
-about:Label("部分是禁漫中心的")
+about:Label("一部分是禁漫中心的")
 about:Label("脚本持续更新中")
 about:Label("脚本疯狂优化中")
 about:Label("熊出没攻击者是1×1×1×1团队的人")
@@ -103,6 +103,14 @@ end)
 
 about:Button("俄亥俄州子弹追踪",function()
 loadstring(game:HttpGet("https://gist.githubusercontent.com/ClasiniZukov/e7547e7b48fa90d10eb7f85bd3569147/raw/f95cd3561a3bb3ac6172a14eb74233625b52e757/gistfile1.txt"))()
+end)
+
+about:Button("指令",function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+about:Button("输入这-甩人-fling-停止-unfling-坐人头上-headsit 这里输入名字",function()
+
 end)
 
 about:Button("管理员权限",function()
@@ -1224,7 +1232,7 @@ local UITab3 = win:Tab("幸运方块",'16060333448')
 
 local about = UITab3:section("幸运方块",true)
 
-about:Button("1",function()
+about:Button("幸运方块脚本1",function()
 loadstring(game:HttpGet("https://github.com/bruhhwtf/LUCKY-BLOCKS-Battlegrounds-GUI/raw/main/Main"))()
 end)
 
@@ -1232,19 +1240,19 @@ local UITab3 = win:Tab("国王遗产",'16060333448')
 
 local about = UITab3:section("国王遗产",true)
 
-about:Button("1",function()
+about:Button("国王遗产脚本1",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Strikehubv2z/StormSKz/main/All_in_one"))()
 end)
 
-about:Button("2",function()
+about:Button("国王遗产脚本2",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/hajibeza/RIPPER-HUB/main/King%20Leagacy"))()
 end)
 
-about:Button("3",function()
+about:Button("国王遗产脚本3",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/master/legacy"))()
 end)
 
-about:Button("4",function()
+about:Button("国王遗产脚本4",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/sannin9000/scripts/main/kinglegacy.lua"))()
 end)
 
@@ -1425,3 +1433,6 @@ about:Button("1×1×1×1自然灾害",function()
 loadstring(game:HttpGet(('https://pastebin.com/raw/JipYNCht'),true))()
 end)
 
+about:Button("彩虹黑洞(原作者是LK靓坤)",function()
+loadstring(game:HttpGet("https://pastebin.com/raw/LHsrytuj"))()
+end)
