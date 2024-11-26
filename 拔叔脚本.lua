@@ -73,9 +73,9 @@ about:Label("你的注入器:"..identifyexecutor())
 about:Label("你的用户名:"..game.Players.LocalPlayer.Character.Name)
 about:Label("服务器名称:"..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
 
-local UITab3 = win:Tab("好用的脚本",'16060333448')
+local UITab3 = win:Tab("精通1",'16060333448')
 
-local about = UITab3:section("好用的脚本",true)
+local about = UITab3:section("精通1",true)
 
 about:Button("靓坤黑洞中心(要白名单否则会被踢)",function()
 loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\120\99\109\115\110\100\47\120\99\109\115\110\100\47\114\101\102\115\47\104\101\97\100\115\47\109\97\105\110\47\54\46\108\117\97\34\41\41\40\41")()
@@ -89,9 +89,9 @@ about:Button("小凌最新版",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E6%96%B0%E5%86%AC%E5%87%8C.Lua"))()
 end)
 
-local UITab3 = win:Tab("精通",'16060333448')
+local UITab3 = win:Tab("精通2",'16060333448')
 
-local about = UITab3:section("精通",true)
+local about = UITab3:section("精通2",true)
 
 about:Button("玩家提示",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/scriscriptsc/main/bbn.lua"))()
@@ -250,6 +250,18 @@ end)
 
 about:Button("反挂机",function()
     loadstring(game:HttpGet("https://pastebin.com/raw/9fFu43FF"))()
+end)
+
+local UITab3 = win:Tab("精通3",'16060333448')
+
+local about = UITab3:section("精通3",true)
+
+about:Button("超级隐身",function()
+loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))()
+end)
+
+about:Button("更新中",function()
+
 end)
 
 local UITab1 = win:Tab("音乐",'16060333448')
