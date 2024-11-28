@@ -27,13 +27,7 @@ local Heartbeat = game:GetService("RunService").Heartbeat
 local LastIteration, Start
 local FrameUpdateTable = { }
 
-game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "拔叔脚本"; Text ="载入中"; Duration = 2; })wait("3")
-
-game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "拔叔脚本"; Text ="3"; Duration = 2; })wait("2")
-
-game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "拔叔脚本"; Text ="2"; Duration = 2; })wait("2")
-
-game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "拔叔脚本"; Text ="1"; Duration = 2; })wait("1")
+game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "拔叔脚本"; Text ="加载中"; Duration = 2; })wait("3")
 
 game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "拔叔脚本"; Text ="载入成功"; Duration = 3; })
 
