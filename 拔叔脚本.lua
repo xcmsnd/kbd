@@ -252,12 +252,782 @@ about:Button("反挂机",function()
     loadstring(game:HttpGet("https://pastebin.com/raw/9fFu43FF"))()
 end)
 
-local UITab3 = win:Tab("精通3",'16060333448')
+local UITab3 = win:Tab("黑洞脚本-英文",'16060333448')
 
-local about = UITab3:section("精通3",true)
+local about = UITab3:section("黑洞脚本-英文",true)
 
 about:Button("超级隐身",function()
 loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))()
+end)
+
+about:Button("黑洞脚本1",function()
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Gui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Box = Instance.new("TextBox")
+local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+local Label = Instance.new("TextLabel")
+local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
+local Button = Instance.new("TextButton")
+local UITextSizeConstraint_3 = Instance.new("UITextSizeConstraint")
+
+--Properties:
+
+Gui.Name = "Gui"
+Gui.Parent = gethui()
+Gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = Gui
+Main.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.335954279, 0, 0.542361975, 0)
+Main.Size = UDim2.new(0.240350261, 0, 0.166880623, 0)
+Main.Active = true
+Main.Draggable = true
+
+Box.Name = "Box"
+Box.Parent = Main
+Box.BackgroundColor3 = Color3.fromRGB(95, 95, 95)
+Box.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Box.BorderSizePixel = 0
+Box.Position = UDim2.new(0.0980926454, 0, 0.218712583, 0)
+Box.Size = UDim2.new(0.801089942, 0, 0.364963502, 0)
+Box.FontFace = Font.new("rbxasset://fonts/families/SourceSansSemibold.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+Box.PlaceholderText = "Player here"
+Box.Text = ""
+Box.TextColor3 = Color3.fromRGB(255, 255, 255)
+Box.TextScaled = true
+Box.TextSize = 31.000
+Box.TextWrapped = true
+
+UITextSizeConstraint.Parent = Box
+UITextSizeConstraint.MaxTextSize = 31
+
+Label.Name = "Label"
+Label.Parent = Main
+Label.BackgroundColor3 = Color3.fromRGB(95, 95, 95)
+Label.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Label.BorderSizePixel = 0
+Label.Size = UDim2.new(1, 0, 0.160583943, 0)
+Label.FontFace = Font.new("rbxasset://fonts/families/Nunito.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+Label.Text = "Bring Parts | t.me/arceusxscripts"
+Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+Label.TextScaled = true
+Label.TextSize = 14.000
+Label.TextWrapped = true
+
+UITextSizeConstraint_2.Parent = Label
+UITextSizeConstraint_2.MaxTextSize = 21
+
+Button.Name = "Button"
+Button.Parent = Main
+Button.BackgroundColor3 = Color3.fromRGB(95, 95, 95)
+Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Button.BorderSizePixel = 0
+Button.Position = UDim2.new(0.183284417, 0, 0.656760991, 0)
+Button.Size = UDim2.new(0.629427791, 0, 0.277372271, 0)
+Button.Font = Enum.Font.Nunito
+Button.Text = "Bring | Off"
+Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+Button.TextScaled = true
+Button.TextSize = 28.000
+Button.TextWrapped = true
+
+UITextSizeConstraint_3.Parent = Button
+UITextSizeConstraint_3.MaxTextSize = 28
+
+-- Scripts:
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local LocalPlayer = Players.LocalPlayer
+local UserInputService = game:GetService("UserInputService")
+local Workspace = game:GetService("Workspace")
+
+local character
+local humanoidRootPart
+
+mainStatus = true
+UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+	if input.KeyCode == Enum.KeyCode.RightControl and not gameProcessedEvent then
+		mainStatus = not mainStatus
+		Main.Visible = mainStatus
+	end
+end)
+
+local Folder = Instance.new("Folder", Workspace)
+local Part = Instance.new("Part", Folder)
+local Attachment1 = Instance.new("Attachment", Part)
+Part.Anchored = true
+Part.CanCollide = false
+Part.Transparency = 1
+
+if not getgenv().Network then
+	getgenv().Network = {
+		BaseParts = {},
+		Velocity = Vector3.new(14.46262424, 14.46262424, 14.46262424)
+	}
+
+	Network.RetainPart = function(Part)
+		if Part:IsA("BasePart") and Part:IsDescendantOf(Workspace) then
+			table.insert(Network.BaseParts, Part)
+			Part.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0, 0, 0)
+			Part.CanCollide = false
+		end
+	end
+
+	local function EnablePartControl()
+		LocalPlayer.ReplicationFocus = Workspace
+		RunService.Heartbeat:Connect(function()
+			sethiddenproperty(LocalPlayer, "SimulationRadius", math.huge)
+			for _, Part in pairs(Network.BaseParts) do
+				if Part:IsDescendantOf(Workspace) then
+					Part.Velocity = Network.Velocity
+				end
+			end
+		end)
+	end
+
+	EnablePartControl()
+end
+
+local function ForcePart(v)
+	if v:IsA("BasePart") and not v.Anchored and not v.Parent:FindFirstChildOfClass("Humanoid") and not v.Parent:FindFirstChild("Head") and v.Name ~= "Handle" then
+		for _, x in ipairs(v:GetChildren()) do
+			if x:IsA("BodyMover") or x:IsA("RocketPropulsion") then
+				x:Destroy()
+			end
+		end
+		if v:FindFirstChild("Attachment") then
+			v:FindFirstChild("Attachment"):Destroy()
+		end
+		if v:FindFirstChild("AlignPosition") then
+			v:FindFirstChild("AlignPosition"):Destroy()
+		end
+		if v:FindFirstChild("Torque") then
+			v:FindFirstChild("Torque"):Destroy()
+		end
+		v.CanCollide = false
+		local Torque = Instance.new("Torque", v)
+		Torque.Torque = Vector3.new(100000, 100000, 100000)
+		local AlignPosition = Instance.new("AlignPosition", v)
+		local Attachment2 = Instance.new("Attachment", v)
+		Torque.Attachment0 = Attachment2
+		AlignPosition.MaxForce = math.huge
+		AlignPosition.MaxVelocity = math.huge
+		AlignPosition.Responsiveness = 200
+		AlignPosition.Attachment0 = Attachment2
+		AlignPosition.Attachment1 = Attachment1
+	end
+end
+
+local blackHoleActive = false
+local DescendantAddedConnection
+
+local function toggleBlackHole()
+	blackHoleActive = not blackHoleActive
+	if blackHoleActive then
+		Button.Text = "Bring Parts | On"
+		for _, v in ipairs(Workspace:GetDescendants()) do
+			ForcePart(v)
+		end
+
+		DescendantAddedConnection = Workspace.DescendantAdded:Connect(function(v)
+			if blackHoleActive then
+				ForcePart(v)
+			end
+		end)
+
+		spawn(function()
+			while blackHoleActive and RunService.RenderStepped:Wait() do
+				Attachment1.WorldCFrame = humanoidRootPart.CFrame
+			end
+		end)
+	else
+		Button.Text = "Bring Parts | Off"
+		if DescendantAddedConnection then
+			DescendantAddedConnection:Disconnect()
+		end
+	end
+end
+
+local function getPlayer(name)
+	local lowerName = string.lower(name)
+	for _, p in pairs(Players:GetPlayers()) do
+		local lowerPlayer = string.lower(p.Name)
+		if string.find(lowerPlayer, lowerName) then
+			return p
+		elseif string.find(string.lower(p.DisplayName), lowerName) then
+			return p
+		end
+	end
+end
+
+local player = nil
+
+local function VDOYZQL_fake_script() -- Box.Script 
+	local script = Instance.new('Script', Box)
+
+	script.Parent.FocusLost:Connect(function(enterPressed)
+		if enterPressed then
+			player = getPlayer(Box.Text)
+			if player then
+				Box.Text = player.Name
+				print("Player found:", player.Name)
+			else
+				print("Player not found")
+			end
+		end
+	end)
+end
+coroutine.wrap(VDOYZQL_fake_script)()
+local function JUBNQKI_fake_script() -- Button.Script 
+	local script = Instance.new('Script', Button)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		if player then
+			character = player.Character or player.CharacterAdded:Wait()
+			humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+			toggleBlackHole()
+		else
+			print("Player is not selected")
+		end
+	end)
+end
+coroutine.wrap(JUBNQKI_fake_script)()
+end)
+
+about:Button("黑洞脚本2",function()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroeramaa/TurtleLib/main/TurtleUiLib.lua"))()  -- Загружаем библиотеку для UI
+local window = library:Window("Черная Дыра", {width = 400, height = 500})  -- Устанавливаем ширину и высоту окна
+
+local blackHole = Instance.new("Part")  -- Черная дыра
+blackHole.Size = Vector3.new(10, 10, 10)
+blackHole.Shape = Enum.PartType.Ball
+blackHole.Anchored = true
+blackHole.CanCollide = false
+blackHole.BrickColor = BrickColor.new("Black")
+blackHole.Position = Vector3.new(0, 10, 0)
+blackHole.Parent = workspace
+
+local radius = 50  -- Радиус воздействия черной дырки
+local force = 200  -- Сила притяжения
+local transparency = 0.5  -- Начальная прозрачность черной дыры
+local blackHoleActive = false
+local flightMode = false  -- Режим полета выключен по умолчанию
+
+local offsetX = 0  -- Начальное смещение по оси X
+local offsetY = 0  -- Начальное смещение по оси Y
+local offsetZ = 0  -- Начальное смещение по оси Z
+
+-- Функция для перемещения черной дыры
+local function moveBlackHole()
+    if blackHoleActive then
+        local playerPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+        -- Если режим полета активен, то установим Y на -6
+        if flightMode then
+            offsetY = -6
+        end
+        -- Перемещаем черную дыру относительно позиции игрока с учетом смещения
+        blackHole.Position = playerPosition + Vector3.new(offsetX, offsetY, offsetZ)
+    end
+end
+
+-- Функция для притягивания объектов
+local function pullObjects()
+    for _, obj in pairs(workspace:GetChildren()) do
+        if obj:IsA("BasePart") and obj ~= blackHole then
+            local distance = (obj.Position - blackHole.Position).magnitude  -- Расстояние от объекта до черной дырки
+            if distance < radius then  -- Если объект находится в радиусе действия
+                local direction = (blackHole.Position - obj.Position).unit  -- Направление к черной дырке
+                local pullForce = direction * force / distance  -- Сила притяжения
+                if obj:FindFirstChild("BodyVelocity") then
+                    obj.BodyVelocity.Velocity = pullForce  -- Применяем силу
+                else
+                    local bodyVel = Instance.new("BodyVelocity")
+                    bodyVel.MaxForce = Vector3.new(5000, 5000, 5000)
+                    bodyVel.Velocity = pullForce
+                    bodyVel.Parent = obj
+                end
+            end
+        end
+    end
+end
+
+-- Обновляем каждый кадр
+game:GetService("RunService").Heartbeat:Connect(function()
+    moveBlackHole()  -- Перемещаем черную дыру
+    pullObjects()  -- Притягиваем объекты
+end)
+
+-- Интерфейс для управления черной дырой
+window:Toggle("Активировать черную дыру", false, function(value)
+    blackHoleActive = value
+    if not blackHoleActive then
+        blackHole.Position = Vector3.new(0, 10, 0)  -- Возвращаем черную дыру на исходную позицию
+    end
+end)
+
+window:Slider("Радиус черной дырки", 5, 100, radius, function(value)
+    radius = value
+end)
+
+window:Slider("Сила притяжения", 50, 500, force, function(value)
+    force = value
+end)
+
+-- Ползунки для смещения черной дыры относительно игрока
+window:Slider("Смещение X", -100, 100, offsetX, function(value)
+    offsetX = value
+end)
+
+window:Slider("Смещение Y", -100, 100, offsetY, function(value)
+    offsetY = value
+end)
+
+window:Slider("Смещение Z", -100, 100, offsetZ, function(value)
+    offsetZ = value
+end)
+
+-- Текстовые поля для координат
+window:Textbox("Координата X", tostring(offsetX), true, function(value)
+    offsetX = tonumber(value) or 0
+end)
+
+window:Textbox("Координата Y", tostring(offsetY), true, function(value)
+    offsetY = tonumber(value) or 0
+end)
+
+window:Textbox("Координата Z", tostring(offsetZ), true, function(value)
+    offsetZ = tonumber(value) or 0
+end)
+
+-- Ползунок для настройки прозрачности
+window:Slider("Прозрачность черной дыры", 0, 1, transparency, function(value)
+    transparency = value
+    blackHole.Transparency = transparency  -- Применяем прозрачность к черной дыре
+end)
+
+-- Кнопка для активации режима полета
+window:Button("Режим полета", function()
+    flightMode = not flightMode  -- Переключаем состояние режима полета
+    if flightMode then
+        offsetY = -6  -- Устанавливаем Y = -6, когда активирован режим полета
+    else
+        offsetY = 0  -- Возвращаем смещение Y в нормальное состояние
+    end
+end)
+end)
+
+about:Button("黑洞脚本3",function()
+-- Black Hole By DenishRRQ
+local headerText = "Black Hole By DenishRRQ"
+local textColor = Color3.fromRGB(255, 165, 0) -- Orange color
+local fadeDuration = 2 -- Duration for fade-in and fade-out
+local displayDuration = 2 -- Duration the text stays fully visible
+
+-- Display the text before executing the script
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+
+local Label = Instance.new("TextLabel")
+Label.Parent = ScreenGui
+Label.Size = UDim2.new(0.5, 0, 0.1, 0)
+Label.Position = UDim2.new(0.25, 0, 0.45, 0)
+Label.Text = headerText
+Label.TextColor3 = textColor
+Label.TextTransparency = 1 -- Start fully transparent
+Label.TextScaled = true
+Label.BackgroundTransparency = 1
+Label.Font = Enum.Font.Arcade -- Set to a better font (Arcade)
+
+-- Fade-in effect
+for i = 1, 10 do
+    Label.TextTransparency = 1 - (i / 10)
+    wait(fadeDuration / 10)
+end
+
+-- Wait for the text to display fully
+wait(displayDuration)
+
+-- Fade-out effect
+for i = 1, 10 do
+    Label.TextTransparency = i / 10
+    wait(fadeDuration / 10)
+end
+
+-- Remove the GUI after the fade-out
+ScreenGui:Destroy()
+
+--[[
+    WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+
+local Players, RunService, Workspace = game:GetService("Players"), game:GetService("RunService"), game:GetService("Workspace")
+local LocalPlayer = Players.LocalPlayer
+
+local blackHoleActive = false
+local Folder, Part, Attachment1
+local screenGui, controlButton, closeButton
+local seatRemovalTimer = 2 -- Time interval for seat removal (in seconds)
+
+local function disableScript()
+    blackHoleActive = false
+    if Folder then Folder:Destroy() end
+    if screenGui then screenGui:Destroy() end
+end
+
+local function setupCharacter()
+    local character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+    local humanoid = character:WaitForChild("Humanoid")
+
+    -- Set up death listener to disable the script on character death
+    humanoid.Died:Connect(disableScript)
+
+    -- Reset Folder and Part on each respawn
+    if Folder then Folder:Destroy() end
+    Folder = Instance.new("Folder", Workspace)
+    Part = Instance.new("Part", Folder)
+    Attachment1 = Instance.new("Attachment", Part)
+    Part.Anchored, Part.CanCollide, Part.Transparency = true, false, 1
+
+    if not getgenv().Network then
+        getgenv().Network = { BaseParts = {}, Velocity = Vector3.new(14.46262424, 14.46262424, 14.46262424) }
+
+        Network.RetainPart = function(Part)
+            if Part:IsA("BasePart") and Part:IsDescendantOf(Workspace) then
+                table.insert(Network.BaseParts, Part)
+                Part.CustomPhysicalProperties, Part.CanCollide = PhysicalProperties.new(0, 0, 0, 0, 0), false
+            end
+        end
+
+        LocalPlayer.ReplicationFocus = Workspace
+        RunService.Heartbeat:Connect(function()
+            sethiddenproperty(LocalPlayer, "SimulationRadius", math.huge)
+            for _, Part in ipairs(Network.BaseParts) do
+                if Part:IsDescendantOf(Workspace) then Part.Velocity = Network.Velocity end
+            end
+        end)
+    end
+
+    local function ForcePart(v)
+        local range = 5000
+        if v:IsA("Part") and not v.Anchored and not v.Parent:FindFirstChild("Humanoid") and not v.Parent:FindFirstChild("Head") and v.Name ~= "Handle" then
+            local distance = (v.Position - humanoidRootPart.Position).Magnitude
+            if distance <= range then
+                for _, x in ipairs(v:GetChildren()) do
+                    if x:IsA("BodyAngularVelocity") or x:IsA("BodyForce") or x:IsA("BodyGyro") or x:IsA("BodyPosition") or x:IsA("BodyThrust") or x:IsA("BodyVelocity") or x:IsA("RocketPropulsion") then
+                        x:Destroy()
+                    end
+                end
+                for _, objName in ipairs({"Attachment", "AlignPosition", "Torque"}) do
+                    if v:FindFirstChild(objName) then v[objName]:Destroy() end
+                end
+                v.CanCollide = false
+                local Torque, AlignPosition, Attachment2 = Instance.new("Torque", v), Instance.new("AlignPosition", v), Instance.new("Attachment", v)
+                Torque.Torque, Torque.Attachment0 = Vector3.new(1e5, 1e5, 1e5), Attachment2
+                AlignPosition.MaxForce, AlignPosition.MaxVelocity, AlignPosition.Responsiveness = 1e16, math.huge, 200
+                AlignPosition.Attachment0, AlignPosition.Attachment1 = Attachment2, Attachment1
+            end
+        end
+    end
+
+    local function toggleBlackHole()
+        blackHoleActive = not blackHoleActive
+
+        if blackHoleActive then
+            for _, v in ipairs(Workspace:GetDescendants()) do ForcePart(v) end
+            Workspace.DescendantAdded:Connect(function(v) if blackHoleActive then ForcePart(v) end end)
+            spawn(function()
+                while blackHoleActive and RunService.RenderStepped:Wait() do
+                    if humanoidRootPart then
+                        Attachment1.WorldCFrame = humanoidRootPart.CFrame
+                    end
+                end
+            end)
+
+            humanoid.StateChanged:Connect(function(_, newState)
+                if newState == Enum.HumanoidStateType.Seated then
+                    humanoid:ChangeState(Enum.HumanoidStateType.GettingUp)
+                end
+            end)
+        else
+            blackHoleActive = false
+        end
+    end
+
+    local function createControlGUI()
+        if screenGui then screenGui:Destroy() end
+
+        screenGui = Instance.new("ScreenGui")
+        screenGui.Name = "ControlGUI"
+        screenGui.ResetOnSpawn = false
+        screenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
+
+        -- Control Button
+        controlButton = Instance.new("TextButton")
+        controlButton.Name = "ToggleBlackHoleButton"
+        controlButton.Size = UDim2.new(0, 180, 0, 30)
+        controlButton.Position = UDim2.new(0.5, -90, 0, 100)
+        controlButton.Text = "Activate Black Hole"
+        controlButton.BackgroundColor3 = Color3.new(0.2, 0.8, 0.2)
+        controlButton.Parent = screenGui
+
+        controlButton.Active, controlButton.Draggable = true, true
+
+        -- Close Button
+        closeButton = Instance.new("TextButton")
+        closeButton.Name = "CloseButton"
+        closeButton.Size = UDim2.new(0, 30, 0, 30)
+        closeButton.Position = UDim2.new(0.5, 90, 0, 100)
+        closeButton.Text = "X"
+        closeButton.BackgroundColor3 = Color3.new(1, 0, 0)
+        closeButton.Parent = screenGui
+
+        -- Button Functions
+        local function updateButton()
+            controlButton.Text = blackHoleActive and "Deactivate Black Hole" or "Activate Black Hole"
+            controlButton.BackgroundColor3 = blackHoleActive and Color3.new(1, 0, 0) or Color3.new(0.2, 0.8, 0.2)
+        end
+
+        updateButton()
+        controlButton.MouseButton1Click:Connect(function()
+            toggleBlackHole()
+            updateButton()
+        end)
+
+        closeButton.MouseButton1Click:Connect(function()
+            disableScript()
+        end)
+
+        -- Follow black hole button
+        controlButton:GetPropertyChangedSignal("Position"):Connect(function()
+            closeButton.Position = UDim2.new(controlButton.Position.X.Scale, controlButton.Position.X.Offset + controlButton.Size.X.Offset + 5, controlButton.Position.Y.Scale, controlButton.Position.Y.Offset)
+        end)
+    end
+
+    createControlGUI()
+end
+
+local function removeAllSeats()
+    while true do
+        for _, seat in ipairs(Workspace:GetDescendants()) do
+            if seat:IsA("Seat") or seat:IsA("VehicleSeat") then
+                seat:Destroy()
+            end
+        end
+        wait(seatRemovalTimer)
+    end
+end
+
+setupCharacter()
+LocalPlayer.CharacterAdded:Connect(setupCharacter)
+
+spawn(removeAllSeats)
+end)
+
+about:Button("黑洞脚本4",function()
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local LocalPlayer = Players.LocalPlayer
+local Workspace = game:GetService("Workspace")
+
+local angle = 1
+local radius = 10
+local blackHoleActive = false
+
+local function setupPlayer()
+    local character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+    local Folder = Instance.new("Folder", Workspace)
+    local Part = Instance.new("Part", Folder)
+    local Attachment1 = Instance.new("Attachment", Part)
+    Part.Anchored = true
+    Part.CanCollide = false
+    Part.Transparency = 1
+
+    return humanoidRootPart, Attachment1
+end
+
+local humanoidRootPart, Attachment1 = setupPlayer()
+
+if not getgenv().Network then
+    getgenv().Network = {
+        BaseParts = {},
+        Velocity = Vector3.new(14.46262424, 14.46262424, 14.46262424)
+    }
+
+    Network.RetainPart = function(part)
+        if typeof(part) == "Instance" and part:IsA("BasePart") and part:IsDescendantOf(Workspace) then
+            table.insert(Network.BaseParts, part)
+            part.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0, 0, 0)
+            part.CanCollide = false
+        end
+    end
+
+    local function EnablePartControl()
+        LocalPlayer.ReplicationFocus = Workspace
+        RunService.Heartbeat:Connect(function()
+            sethiddenproperty(LocalPlayer, "SimulationRadius", math.huge)
+            for _, part in pairs(Network.BaseParts) do
+                if part:IsDescendantOf(Workspace) then
+                    part.Velocity = Network.Velocity
+                end
+            end
+        end)
+    end
+
+    EnablePartControl()
+end
+
+local function ForcePart(v)
+    if v:IsA("Part") and not v.Anchored and not v.Parent:FindFirstChild("Humanoid") and not v.Parent:FindFirstChild("Head") and v.Name ~= "Handle" then
+        for _, x in next, v:GetChildren() do
+            if x:IsA("BodyAngularVelocity") or x:IsA("BodyForce") or x:IsA("BodyGyro") or x:IsA("BodyPosition") or x:IsA("BodyThrust") or x:IsA("BodyVelocity") or x:IsA("RocketPropulsion") then
+                x:Destroy()
+            end
+        end
+        if v:FindFirstChild("Attachment") then
+            v:FindFirstChild("Attachment"):Destroy()
+        end
+        if v:FindFirstChild("AlignPosition") then
+            v:FindFirstChild("AlignPosition"):Destroy()
+        end
+        if v:FindFirstChild("Torque") then
+            v:FindFirstChild("Torque"):Destroy()
+        end
+        v.CanCollide = false
+        
+        local Torque = Instance.new("Torque", v)
+        Torque.Torque = Vector3.new(1000000, 1000000, 1000000)
+        local AlignPosition = Instance.new("AlignPosition", v)
+        local Attachment2 = Instance.new("Attachment", v)
+        Torque.Attachment0 = Attachment2
+        AlignPosition.MaxForce = math.huge
+        AlignPosition.MaxVelocity = math.huge
+        AlignPosition.Responsiveness = 500
+        AlignPosition.Attachment0 = Attachment2
+        AlignPosition.Attachment1 = Attachment1
+    end
+end
+
+local function toggleBlackHole()
+    blackHoleActive = not blackHoleActive
+    if blackHoleActive then
+        for _, v in next, Workspace:GetDescendants() do
+            ForcePart(v)
+        end
+
+        Workspace.DescendantAdded:Connect(function(v)
+            if blackHoleActive then
+                ForcePart(v)
+            end
+        end)
+
+        spawn(function()
+            while blackHoleActive and RunService.RenderStepped:Wait() do
+                angle = angle + math.rad(2)
+
+                local offsetX = math.cos(angle) * radius
+                local offsetZ = math.sin(angle) * radius
+
+                Attachment1.WorldCFrame = humanoidRootPart.CFrame * CFrame.new(offsetX, 0, offsetZ)
+            end
+        end)
+    else
+        Attachment1.WorldCFrame = CFrame.new(0, -1000, 0)
+    end
+end
+
+LocalPlayer.CharacterAdded:Connect(function()
+    humanoidRootPart, Attachment1 = setupPlayer()
+    if blackHoleActive then
+        toggleBlackHole()
+    end
+end)
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Projeto LKB", HidePremium = false, SaveConfig = true, ConfigFolder = "Natural Disaster FE Blackhole"})
+
+local PlayerTab = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local PlayerSection = PlayerTab:AddSection({
+    Name = "Blackhole FE I Natural Disaster"
+})
+
+PlayerSection:AddSlider({
+    Name = "Radius",
+    Min = 1,
+    Max = 100,
+    Default = 10,
+    Color = Color3.fromRGB(255, 255, 255),
+    Increment = 1,
+    ValueName = "Value",
+    Callback = function(Value)
+        radius = Value
+    end    
+})
+
+PlayerSection:AddSlider({
+    Name = "Speed Blackhole",
+    Min = 1,
+    Max = 250,
+    Default = 1,
+    Color = Color3.fromRGB(255, 255, 255),
+    Increment = 1,
+    ValueName = "Value",
+    Callback = function(Value)
+        angleSpeed = Value
+    end    
+})
+
+PlayerSection:AddToggle({
+    Name = "Blackhole",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            toggleBlackHole()
+        else
+            blackHoleActive = false
+        end
+    end    
+})
+
+spawn(function()
+    while true do
+        RunService.RenderStepped:Wait()
+        if blackHoleActive then
+            angle = angle + math.rad(angleSpeed)
+        end
+    end
+end)
+
+
+local Info = Window:MakeTab({
+    Name = "Info",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+Info:AddLabel("Modified Distance and Speed by NeymarJR Scriptblox.com")
+Info:AddLabel(".gg/3kZ7dKbJPe - Pls Join For More OP Scripts !")
+Info:AddParagraph("Warn", "If your BlackHole bugs and it stays on you, disable the toggle and enable it again")
+Info:AddLabel("Credits to the Original Owner!")
+
+toggleBlackHole()
 end)
 
 about:Button("更新中",function()
