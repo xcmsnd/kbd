@@ -48,7 +48,10 @@ Heartbeat:Connect(HeartbeatUpdate)
 
 local ui = loadstring(game:HttpGet("https://pastebin.com/raw/x5g4ZzL6"))();		
 local win = ui:new("拔叔脚本")
+--
 local UITab1 = win:Tab("信息",'16060333448')
+
+local about = UITab1:section("作者信息",false)
 
 about:Label("作者：靓坤")
 about:Label("一部分是禁漫中心的")
