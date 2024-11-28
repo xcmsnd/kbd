@@ -56,9 +56,6 @@ about:Label("一部分是禁漫中心的")
 about:Label("脚本持续更新中")
 about:Label("脚本疯狂优化中")
 about:Label("按住左上角脚本名字可拖动整个界面UI")
-about:Button("公益版",function()
-loadstring(game:HttpGet("https://pastebin.com/raw/3rrU4cnx"))()
-end)
 
 local about = UITab1:section("你的信息",false)
 
