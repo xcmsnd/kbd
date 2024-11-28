@@ -54,7 +54,7 @@ about:Label("作者：靓坤")
 about:Label("一部分是禁漫中心的")
 about:Label("脚本持续更新中")
 about:Label("脚本疯狂优化中")
-about:Label("按住左上角脚本名字可拖动整个界面UI")
+about:Label("长按脚本名字可拖动界面UI")
 
 local about = UITab1:section("你的信息",false)
 
