@@ -70,6 +70,10 @@ local UITab3 = win:Tab("精通1",'16060333448')
 
 local about = UITab3:section("精通1",true)
 
+about:Button("浮萍中心(作者信任的人)",function()
+loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\34\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\69\55\97\57\84\56\65\109\34\41\40\41\10")()
+end)
+
 about:Button("靓坤黑洞中心(要白名单否则会被踢)",function()
 loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\120\99\109\115\110\100\47\120\99\109\115\110\100\47\114\101\102\115\47\104\101\97\100\115\47\109\97\105\110\47\54\46\108\117\97\34\41\41\40\41")()
 end)
@@ -267,6 +271,18 @@ local about = UITab3:section("黑洞脚本-英文",true)
 
 about:Button("超级隐身",function()
 loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))()
+end)
+
+about:Button("彩虹黑洞脚本(本人制作)",function()
+loadstring(game:HttpGet("https://pastebin.com/raw/LHsrytuj"))()
+end)
+
+about:Button("美女黑洞脚本",function()
+loadstring(game:HttpGet("https://pastebin.com/raw/9pUE0ywA"))()
+end)
+
+about:Button("超强环形黑洞",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BOOSBS/666/refs/heads/main/656"))()
 end)
 
 about:Button("黑洞脚本1",function()
