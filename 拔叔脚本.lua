@@ -95,8 +95,6 @@ local Green = Instance.new("TextBox")
 local Blue = Instance.new("TextBox")
 local TextLabel = Instance.new("TextLabel")
 
---Properties:
-
 FightingGui.Name = "FightingGui"
 FightingGui.Parent = game.CoreGui
 FightingGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -226,8 +224,6 @@ game:GetService('RunService').RenderStepped:connect(function()
 		end
 	end
 end)
-  	end    
-})
 end)
 
 about:Button("自瞄",function()
