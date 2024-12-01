@@ -78,6 +78,14 @@ about:Button("浮萍中心(作者信任的人)",function()
 loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\84\72\68\90\69\80\47\100\117\99\107\119\101\101\100\45\99\101\110\116\101\114\86\50\47\109\97\105\110\47\37\69\53\37\56\57\37\56\68\37\69\56\37\65\56\37\56\48\34\41\40\41\10")()
 end)
 
+about:Button("1×1×1×1 (真)",function()
+loadstring(game:GetObjects("rbxassetid://8127297852")[1].Source)() 
+end)
+
+about:Button("控制玩家",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/XiaoLing-CODE.tk3usj449llspw1/main/%E7%8E%A9%E5%AE%B6%E6%8E%A7%E5%88%B6%20%E6%B1%89%E5%8C%96.txt"))()  
+end)
+
 about:Button("靓坤黑洞中心(要白名单否则会被踢)",function()
 loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\120\99\109\115\110\100\47\120\99\109\115\110\100\47\114\101\102\115\47\104\101\97\100\115\47\109\97\105\110\47\54\46\108\117\97\34\41\41\40\41")()
 end)
@@ -258,6 +266,10 @@ local about = UITab3:section("精通2",true)
 
 about:Button("玩家提示",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/scriscriptsc/main/bbn.lua"))()
+end)
+
+about:Button("控制玩家",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/XiaoLing-CODE.tk3usj449llspw1/main/%E7%8E%A9%E5%AE%B6%E6%8E%A7%E5%88%B6%20%E6%B1%89%E5%8C%96.txt"))()  
 end)
 
 about:Button("自瞄",function()
@@ -2097,13 +2109,17 @@ about:Button("杀手与警长1",function()
 loadstring(game:HttpGet("https://pastebin.com/raw/yadbPQUm",true))()
 end)
 
-about:Button("杀手与警长（秒杀）",function()
+about:Button("杀手与警长2",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Deni210/murdersvssherrifsduels/main/rubyhub", true))()
 end)
 
 local UITab51 = win:Tab("鱼",'16060333448')
 
 local about = UITab51:section("鱼",true)
+
+about:Button("鱼",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E6%B8%B8%E6%88%8F/Auto-fishing-Rsc.Lua"))()
+end)
 
 about:Button("鱼脚本（乌托邦）",function()
 loadstring(game:HttpGet(utf8.char((function() return table.unpack({ 104,116,116,112,115,58,47,47,112,97,115,116,101,102,121,46,97,112,112,47,120,88,119,76,110,103,81,68,47,114,97,119})end)())))()
