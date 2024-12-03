@@ -435,6 +435,10 @@ about:Button("超级隐身",function()
 loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))()
 end)
 
+about:Button("最强环形黑洞要白名单否则会踢",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xcmsnd/HD/refs/heads/main/%E7%B4%A0%E8%BE%9E"))()
+end)
+
 about:Button("彩虹黑洞脚本(本人制作)",function()
 loadstring(game:HttpGet("https://pastebin.com/raw/LHsrytuj"))()
 end)
