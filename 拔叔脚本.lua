@@ -74,7 +74,7 @@ about:Button("通用大全（原作者靓坤）",function()
 loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\110\102\104\107\81\98\80\78\34\41\41\40\41")()
 end)
 
-about:Button("最新更新反复横跳",function()
+about:Button("新更新反复横跳",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe/main/obf_11l7Y131YqJjZ31QmV5L8pI23V02b3191sEg26E75472Wl78Vi8870jRv5txZyL1.lua.txt"))()
 end)
 
